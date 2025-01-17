@@ -7,6 +7,8 @@ import postcss from 'rollup-plugin-postcss';
 import css from 'rollup-plugin-css-only';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
+import copy from 'rollup-plugin-copy';
+
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -36,6 +38,14 @@ export default {
     commonjs(),
     !production && livereload('public'),
     production && terser(),
+    copy({
+      targets: [
+        {
+          src: 'node_modules/katex/dist/fonts/*',
+          dest: 'public/build/fonts'
+        }
+      ]
+    }),
   ],
   watch: {
     clearScreen: false,

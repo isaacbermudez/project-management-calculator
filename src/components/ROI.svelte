@@ -1,84 +1,96 @@
 <script>
-  let investment = 0;
+  import katex from 'katex';
+  import 'katex/dist/katex.min.css';
+
   let gain = 0;
+  let cost = 0;
   let roi = 0;
 
+  const formula = `
+    ROI = \\frac{\\text{Ganancia de la Inversión} - \\text{Costo de la Inversión}}{\\text{Costo de la Inversión}} \\times 100
+  `;
+
   function calculateROI() {
-    if (investment > 0) {
-      roi = ((gain - investment) / investment) * 100;
+    if (cost === 0) {
+      roi = "Error: División por cero";
     } else {
-      roi = 0;
+      roi = ((gain - cost) / cost) * 100;
     }
   }
 </script>
 
-<div class="card">
+<div class="roi-container">
   <h2>Retorno de Inversión (ROI)</h2>
-  <p class="description">
-    El ROI mide la rentabilidad de una inversión en relación con su costo.
-  </p>
 
-  <label for="investment">Inversión:</label>
-  <input
-    type="number"
-    id="investment"
-    bind:value={investment}
-    placeholder="Ingrese la cantidad de inversión"
-  />
+  <!-- Render Formula with KaTeX -->
+  <div class="formula">
+    <strong>Fórmula:</strong>
+    <div class="math">
+      {@html katex.renderToString(formula, { throwOnError: false })}
+    </div>
+  </div>
 
-  <label for="gain">Ganancia:</label>
-  <input
-    type="number"
-    id="gain"
-    bind:value={gain}
-    placeholder="Ingrese la cantidad de ganancia"
-  />
+  <!-- Input Fields -->
+  <label for="gain">Ganancia de la inversión:</label>
+  <input id="gain" type="number" bind:value={gain} />
 
-  <button class="calculate" on:click={calculateROI}>Calcular ROI</button>
-  <p class="result">ROI: {roi.toFixed(2)}%</p>
+  <label for="cost">Costo de la inversión:</label>
+  <input id="cost" type="number" bind:value={cost} />
+
+  <button on:click={calculateROI} class="calculate">Calcular</button>
+
+  <!-- Display Result -->
+  <p style="color: blueviolet; font-weight: bold; ">Retorno de Inversión (ROI): {roi}%</p>
 </div>
 
+
 <style>
-  .card {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #fff;
+  .roi-container {
+    margin: 20px auto;
     padding: 20px;
     border-radius: 10px;
+    background-color: #ffffff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
   }
 
   h2 {
-    color: #495057;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
     text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
   }
 
-  .description {
-    color: #6c757d;
-    font-size: 16px;
+  .formula {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
     margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #495057;
+  }
+
+  .math {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
   }
 
   label {
     display: block;
-    margin-bottom: 8px;
-    color: #495057;
+    margin: 10px 0 5px;
     font-weight: bold;
   }
 
   input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 8px;
+    margin-bottom: 10px;
     border: 1px solid #ced4da;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
   }
 
-  button.calculate {
+  .calculate {
     width: 100%;
     background-color: #007bff;
     color: white;
@@ -91,14 +103,7 @@
     transition: all 0.3s ease;
   }
 
-  button.calculate:hover {
+  .calculate:hover {
     background-color: #0056b3;
-  }
-
-  .result {
-    text-align: center;
-    color: #495057;
-    font-size: 18px;
-    margin-top: 15px;
   }
 </style>
