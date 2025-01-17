@@ -40,13 +40,6 @@
   </main>
   
   <style>
-	/* General Styles */
-	body {
-	  font-family: 'Arial', sans-serif;
-	  background-color: #f8f9fa;
-	  margin: 0;
-	  padding: 0;
-	}
   
 	.tabs {
 	  display: flex;
@@ -90,30 +83,7 @@
 	  border-radius: 10px;
 	  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 	}
-  
-	h2 {
-	  color: #495057;
-	  font-size: 24px;
-	  font-weight: bold;
-	  margin-bottom: 20px;
-	  text-align: center;
-	}
-  
-	p {
-	  color: #6c757d;
-	  font-size: 16px;
-	  margin-bottom: 10px;
-	}
-  
-	input {
-	  width: 100%;
-	  padding: 10px;
-	  margin-bottom: 15px;
-	  border: 1px solid #ced4da;
-	  border-radius: 5px;
-	  font-size: 16px;
-	}
-  
+
 	button.calculate {
 	  width: 100%;
 	  background-color: #007bff;

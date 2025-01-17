@@ -1,0 +1,86 @@
+.card.svelte-1dx4cdq{max-width:600px;margin:0 auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0px 2px 4px rgba(0, 0, 0, 0.1)}h2.svelte-1dx4cdq{color:#495057;font-size:24px;font-weight:bold;margin-bottom:20px;text-align:center}.description.svelte-1dx4cdq{color:#6c757d;font-size:16px;margin-bottom:20px}label.svelte-1dx4cdq{display:block;margin-bottom:8px;color:#495057;font-weight:bold}input.svelte-1dx4cdq{width:100%;padding:10px;margin-bottom:15px;border:1px solid #ced4da;border-radius:5px;font-size:16px}button.calculate.svelte-1dx4cdq{width:100%;background-color:#007bff;color:white;padding:10px;border:none;border-radius:5px;cursor:pointer;font-weight:bold;font-size:16px;transition:all 0.3s ease}button.calculate.svelte-1dx4cdq:hover{background-color:#0056b3}.result.svelte-1dx4cdq{text-align:center;color:#495057;font-size:18px;margin-top:15px}
+.tabs.svelte-7ikcz6{display:flex;justify-content:center;gap:10px;background-color:#ffffff;padding:10px 20px;border-radius:10px;box-shadow:0px 2px 4px rgba(0, 0, 0, 0.1);margin:20px auto;max-width:600px}.tab-button.svelte-7ikcz6{flex:1;background-color:#e9ecef;color:#495057;border:none;padding:10px 20px;border-radius:8px;font-weight:bold;cursor:pointer;transition:all 0.3s ease}.tab-button.svelte-7ikcz6:hover{background-color:#dee2e6}.tab-button.active.svelte-7ikcz6{background-color:#007bff;color:#ffffff;box-shadow:0px 4px 6px rgba(0, 123, 255, 0.3)}.content.svelte-7ikcz6{max-width:600px;margin:20px auto;background-color:#ffffff;padding:20px;border-radius:10px;box-shadow:0px 2px 4px rgba(0, 0, 0, 0.1)}button.calculate.svelte-7ikcz6{width:100%;background-color:#007bff;color:white;padding:10px;border:none;border-radius:5px;cursor:pointer;font-weight:bold;font-size:16px;transition:all 0.3s ease}button.calculate.svelte-7ikcz6:hover{background-color:#0056b3}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  nav button {
+    background: #e0e0e0;
+    color: #333;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  nav button.active {
+    background: #007bff;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav button:hover {
+    background: #d6d6d6;
+  }
+  
+  .card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  button.calculate {
+    width: 100%;
+    background: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button.calculate:hover {
+    background: #0056b3;
+  }
+  
+  p {
+    text-align: center;
+    color: #666;
+  }
+  
